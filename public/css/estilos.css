@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+body{
+    background-color: #16BAC5!important;
+}
+
+a{
+    color: white!important;
+}
+
+label{
+    color: white;
+}
+
+h2{
+    color: white!important;
+    text-align:center; 
+    margin-top:50px;
+}
+
+h4{
+    margin-right: 10px;
+    color: white!important;
+}
+
+#mensajeBienvenida{
+    font: 42px Orbitron;
+    color: #EFE9F4;
+}
+
+td, th{
+    font-family: "Yusei Magic";
+}
+
+#logoutDiv{
+    color: white; 
+    text-align: right; 
+    font-size: 30px; 
+    margin-right: 10px;
+}

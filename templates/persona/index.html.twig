@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+    {% block title %}Inicio{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block body %}
+        <body style="background-color: #2eb4b5;">
+            {{parent()}}
+            {% if app.user %}
+                <div id="logoutDiv" class="my-2 my-sm-0">
+                    Se ha logueado como {{ app.user.username }}, <a href="{{ path('app_logout') }}" style="color: #990000!important;">Logout</a>
+                </div>
+            {% endif %}
+        </body>
+    {% endblock %}

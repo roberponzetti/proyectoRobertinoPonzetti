@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+<body>
+    {{parent()}}
+    <div>
+        <h2 style="text-align:center; margin-top:50px;"><b>Registrar usuario</b></h3>
+    </div>
+    <div class="container" style="margin-top: 50px;">
+        {{ form_start(formulario, {'enctype':'multipart/form-data'})}}
+            <div class="row" style="text-align: center;">
+                <div class="offset-md-4 col-md-4">
+                    {{ form_widget(formulario.nombre, {attr: {class: 'form-control', placeholder: 'Nombre'} })}}
+                    <br>
+                </div>
+                <div class="offset-md-4 col-md-4">
+                    {{ form_widget(formulario.apellido, {attr: {class: 'form-control', placeholder: 'Apellido'} })}}
+                    <br>
+                </div>
+               <div class="offset-md-4 col-md-4">
+                    {{ form_widget(formulario.dni, {attr: {class: 'form-control', placeholder: 'DNI'} })}}
+                    <br>
+                </div>
+                <div class="offset-md-4 col-md-4">
+                    {{ form_widget(formulario.domicilio, {attr: {class: 'form-control', placeholder: 'Domicilio'} })}}
+                    <br>
+                </div>
+                <div class="offset-md-4 col-md-4">
+                    {{ form_widget(formulario.telefono, {attr: {class: 'form-control', placeholder: 'Teléfono'} })}}
+                    <br>
+                </div>
+                <div class="offset-md-5 col-md-2">
+                    {{ form_widget(formulario.Aceptar, {attr: {class: 'btn btn-primary'} })}}
+                </div>
+            </div>
+            {{ form_end(formulario) }}
+    </div>
+<body>
+{% endblock %}

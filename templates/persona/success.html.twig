@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <body>
+        {{parent()}}
+
+    <div>
+        <h2 style="text-align:center; margin-top:50px;"><b>Se guardó correctamente a {{ persona.nombre }} {{ persona.apellido }} !</b></h3>
+    </div>
+    <div style="text-align:center;">
+        <a href="{{path('registro')}}">Volver</a>
+    </div>
+    <body>
+{% endblock %}

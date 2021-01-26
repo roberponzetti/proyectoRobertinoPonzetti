@@ -1,0 +1,51 @@
+    {% extends 'base.html.twig' %}
+
+    {% block title %}Lista Personas{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+    {% block body %}
+    {{parent()}}
+
+    <div>
+        <h2 style="text-align:center; margin-top:50px;"><b>Lista usuarios</b></h3>
+    </div>
+    <div class="container" style="margin-top: 50px;">
+        <div class="container">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        </div>
+            <table class="table table-borderless" style="border: 2px solid white;">
+                <thead>
+                <tr style="color:#0F9FA8; background-color: #EDEDED;">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Domicilio</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for persona in personas %}
+                        <tr>
+                            <td>{{ persona.nombre }}</td>
+                            <td>{{ persona.apellido }}</td>
+                            <td>{{ persona.dni }}</td>
+                            <td>{{ persona.domicilio }}</td>
+                            <td>{{ persona.telefono }}</td>
+                            <td><a href="{{path('modificarPersona', {'id': persona.id})}}"><i class="material-icons" style="color: green;">edit</i></a></td>
+                            <td><a onclick="deleteFunction({{persona.id}})" style="cursor: pointer; content-align: center;"><i class="material-icons" style="color: red;">delete</i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    {% endblock %}
